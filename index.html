@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Projjeta Design | Arquitetura de Luxo</title>
+    <meta name="description"
+        content="Projetos autorais que traduzem sofisticação em cada traço. Arquitetura residencial, design de interiores e consultoria executiva.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#B8912D",
+                        "primary-dark": "#9A7822",
+                        "bg-light": "#f8f7f6",
+                        "bg-dark": "#1e1a14",
+                        "bg-beige": "#EDE6DC",
+                        "bg-beige-dark": "#D6CCBF",
+                        "luxury-beige": "#E5D3C2",
+                        "footer-dark": "#2C2418",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .serif-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .border-gold {
+            border: 2px solid #B8912D;
+        }
+
+        .divider-gold {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #B8912D, transparent);
+        }
+
+        .gold-line {
+            width: 80px;
+            height: 3px;
+            background: #B8912D;
+        }
+
+        /* Smooth scroll-reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.15s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.3s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.45s;
+        }
+
+        /* Hero parallax-like subtle effect */
+        .hero-bg {
+            transition: transform 0.3s ease-out;
+        }
+
+        /* Card hover lift */
+        .service-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Gallery card interactions */
+        .gallery-card .overlay {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .gallery-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-card img {
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        body {
+            min-height: 100dvh;
+            overflow-x: hidden;
+        }
+
+        /* Testimonial quote styling */
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            line-height: 1;
+            color: #B8912D;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body class="bg-bg-light font-display text-slate-900">
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- NAVIGATION -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <nav
+        class="flex items-center justify-between px-8 py-5 bg-bg-light/80 backdrop-blur-md sticky top-0 z-50 border-b border-primary/10">
+        <div class="flex items-center">
+            <img src="projeta_designers.png" alt="Projjeta Design" class="h-10 md:h-12 w-auto">
+        </div>
+        <div class="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] font-medium">
+            <a class="hover:text-primary transition-colors" href="#inicio">Início</a>
+            <a class="hover:text-primary transition-colors" href="#manifesto">Manifesto</a>
+            <a class="hover:text-primary transition-colors" href="#servicos">Serviços</a>
+            <a class="hover:text-primary transition-colors" href="#metodologia">Metodologia</a>
+            <a class="hover:text-primary transition-colors" href="#contato">Contato</a>
+        </div>
+        <a href="#contato"
+            class="border border-primary px-6 py-2.5 text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all hidden md:inline-block">
+            Iniciar meu Projeto
+        </a>
+        <button
+            class="md:hidden border border-primary px-4 py-2 text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all">
+            Menu
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CONTAINER 1: HERO -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <header id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Subtle gradient to blend image -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent z-10"></div>
+            <img class="hero-bg w-full h-full object-cover" alt="Interior Projjeta de alto padrão"
+                src="Gemini_Generated_Image_a9sd3la9sd3la9sd.png" />
+        </div>
+
+        <div class="relative z-20 text-center px-6 max-w-5xl">
+            <!-- Text background for readability -->
+            <div class="bg-white/40 backdrop-blur-md p-10 md:p-16 rounded-2xl border border-white/40 shadow-2xl reveal">
+                <h1 class="font-serif text-slate-900 text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
+                    A elegância do clássico <br class="hidden md:block"> no seu <span
+                        class="serif-italic">ambiente.</span>
+                </h1>
+                <div class="gold-line mx-auto my-6"></div>
+                <p
+                    class="text-slate-800 text-lg md:text-xl font-medium mb-10 tracking-wide max-w-2xl mx-auto leading-relaxed">
+                    Projetos autorais que unem sofisticação, tons atemporais e o brilho do seu sonho.
+                </p>
+                <a href="#manifesto"
+                    class="inline-block bg-primary text-white px-12 py-4 font-bold text-sm uppercase tracking-[0.3em] hover:bg-primary-dark transition-all shadow-lg">
+                    Conheça a Projjeta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="divider-gold"></div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CONTAINER 2: O MANIFESTO -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="manifesto" class="bg-white py-24 md:py-32 px-8">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-xs uppercase tracking-[0.3em] text-primary mb-6 block reveal">Nossa Essência</span>
+            <h2 class="font-serif text-3xl md:text-5xl mb-10 leading-tight reveal">
+                A Essência do Design <span class="serif-italic">Atemporal.</span>
+            </h2>
+            <p class="text-slate-600 text-lg md:text-xl leading-relaxed mb-10 max-w-3xl mx-auto reveal">
+                Na Projjeta, acreditamos que o luxo não é apenas o que se vê, mas o que se sente. Utilizamos uma paleta
+                de tons pastéis, marrons suaves e detalhes em dourado para criar ambientes que nunca saem de moda. Cada
+                escolha é pensada para refletir a sua história com a elegância que ela merece.
+            </p>
+            <div class="flex items-center justify-center gap-4 reveal">
+                <div class="gold-line"></div>
+                <p class="font-serif italic text-primary text-lg md:text-xl">Curadoria de materiais nobres e iluminação
+                    cênica.</p>
+                <div class="gold-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gold"></div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CONTAINER 3: NOSSOS SERVIÇOS -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="servicos" class="bg-bg-beige py-24 md:py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-primary mb-6 block reveal">O que fazemos</span>
+                <h2 class="font-serif text-3xl md:text-5xl reveal">Soluções <span class="serif-italic">Sob
+                        Medida.</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Card 1: Arquitetura Residencial -->
+                <div class="service-card border-gold bg-white p-10 text-center reveal">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6 block">home</span>
+                    <h3 class="font-serif text-2xl mb-4">Arquitetura Residencial</h3>
+                    <p class="text-slate-600 leading-relaxed">Do conceito à entrega, criamos o refúgio perfeito para sua
+                        família.</p>
+                </div>
+                <!-- Card 2: Design de Interiores -->
+                <div class="service-card border-gold bg-white p-10 text-center reveal reveal-delay-1">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6 block">palette</span>
+                    <h3 class="font-serif text-2xl mb-4">Design de Interiores</h3>
+                    <p class="text-slate-600 leading-relaxed">Harmonização de cores, texturas e mobiliário com foco em
+                        sofisticação.</p>
+                </div>
+                <!-- Card 3: Consultoria Executiva -->
+                <div class="service-card border-gold bg-white p-10 text-center reveal reveal-delay-2">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6 block">business_center</span>
+                    <h3 class="font-serif text-2xl mb-4">Consultoria Executiva</h3>
+                    <p class="text-slate-600 leading-relaxed">Transformamos espaços comerciais em ambientes de
+                        autoridade e prestígio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gold"></div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CONTAINER 4: METODOLOGIA -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="metodologia" class="relative py-24 md:py-32 px-8 overflow-hidden bg-white">
+        <!-- Subtle 'P' decorative background -->
+        <div class="absolute top-0 left-10 text-[25rem] font-serif font-black text-slate-100/40 select-none z-0">
+            P
+        </div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
+            <div>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-800 leading-tight mb-2 reveal">
+                    Do Traço
+                </h2>
+                <p class="font-serif italic text-primary text-3xl md:text-5xl mb-10 reveal reveal-delay-1">
+                    ao Detalhe Final.
+                </p>
+
+                <p class="text-slate-600 text-lg leading-relaxed mb-10 reveal reveal-delay-2">
+                    Nosso processo é meticuloso. Unimos a precisão técnica da arquitetura com a sensibilidade do design
+                    clássico. Através de visualizações 3D realistas, você vivencia cada textura e brilho dourado antes
+                    mesmo da primeira pedra ser colocada.
+                </p>
+
+                <!-- Minimalist Points -->
+                <div class="space-y-6 reveal reveal-delay-3">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+                        <p class="text-slate-700 font-medium">Curadoria de materiais nobres e sustentáveis</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">architecture</span>
+                        <p class="text-slate-700 font-medium">Detalhamento técnico milimétrico</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">format_paint</span>
+                        <p class="text-slate-700 font-medium">Equilíbrio entre forma e função ergonômica</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative reveal">
+                <div class="border-gold p-6 bg-white relative">
+                    <img class="w-full h-[600px] object-cover" alt="Sala de estar sofisticada - Projeto Projjeta"
+                        src="IMG_6510.PNG" />
+
+                    <!-- Rectangular badge from screenshot -->
+                    <div class="absolute -bottom-1 -right-1 bg-[#B8912D] p-8 min-w-[180px]">
+                        <p class="font-serif text-3xl text-white">15+</p>
+                        <p class="text-white text-[10px] uppercase tracking-[0.2em] font-bold mt-1">Anos de Excelência
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="divider-gold"></div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- GALERIA DE PROJETOS (Mantido do Stitch original) -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="portfolio" class="py-24 md:py-32 px-8 bg-bg-light">
+        <div class="text-center mb-16">
+            <span class="text-xs uppercase tracking-[0.3em] text-primary mb-6 block reveal">Portfólio</span>
+            <h2 class="font-serif text-3xl md:text-5xl mb-4 reveal">Galeria de <span
+                    class="serif-italic">Projetos</span></h2>
+            <div class="w-24 h-px bg-primary mx-auto"></div>
+        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="gallery-card group cursor-pointer reveal">
+                <div class="border-gold p-2">
+                    <div class="relative overflow-hidden aspect-[3/4]">
+                        <img class="w-full h-full object-cover" alt="Residência Aurora - sala de estar luxuosa"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0NCT58TlzqPdB5MSWwrRUlk2PXuJ8sa08zPLsBycIskORk2c5uwN5EWctplXMVfEZtNrBT6xgj5C9p0N8V6P5ZshbNDYd9hUv5eIwEH3tVotCR-AilhGWON4XsajETDFpbH5EUgAFIkFSPilRlfQxvkr-ri8-HeTK7Dq_RCdkpV7zd_Cl7ML7w_RNWkvT0sOnNE6d1tw8-ovasERzqNlQkUKPlfIwpXQlORiferFGI-_b812xcH9zXaHHl6hbS6BI57oqQ7aKoUc" />
+                        <div class="overlay absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 uppercase text-xs tracking-widest">Ver
+                                Detalhes</span>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-4 font-serif text-xl text-center">Residência Aurora</h3>
+            </div>
+            <!-- Project 2 -->
+            <div class="gallery-card group cursor-pointer reveal reveal-delay-1">
+                <div class="border-gold p-2">
+                    <div class="relative overflow-hidden aspect-[3/4]">
+                        <img class="w-full h-full object-cover" alt="Edifício Grand Palais - detalhe arquitetônico"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVWXlOP0DugRl3RZ_YmoJ3Ol5UrU_tOTlY8gtyl6YZlByRbLcqLFCYv8z1DO9qIQrxK_kISovgjQCeYdVPvCZwiQhNWEQ5EaUi9inqHAMahKFJipDJDKxi3lXllonoc8P_vTh8HzE5MyJQ2eHgFvU2-rYpbdpCyVnf3ltsNyRs1QzGFX_0zwWyY8PjsTUv_isk3bFe1AyOSw9p3ppdKx9QdVHpccnibpp2fqc0gYtQ8tDUKQuen3VTh0OnL7ME6u7snKgCMQ5sQGg" />
+                        <div class="overlay absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 uppercase text-xs tracking-widest">Ver
+                                Detalhes</span>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-4 font-serif text-xl text-center">Edifício Grand Palais</h3>
+            </div>
+            <!-- Project 3 -->
+            <div class="gallery-card group cursor-pointer reveal reveal-delay-2">
+                <div class="border-gold p-2">
+                    <div class="relative overflow-hidden aspect-[3/4]">
+                        <img class="w-full h-full object-cover" alt="Suíte Master Ouro - acabamentos dourados"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkJEJ8IS3uuQOQ76422leu7MHxo8eqA3wn3P7AlL5QEgiAumZATAxiBLSlGJQa0HWERGxsgkjWxj0EpftQN2-xZYahRH64UwwSVJwaOIGRfguW0FOoEgM7XgznHta0cIVFENMKpJ2UN4VfMiR49X40rn1SGn3m3baGfQqGWv2brIOcD_w5D32oolWhhXU4L_-EwJkh8pXvH8Ie26jH3SbMD7Ks446qeuQ_sil0H3HYIewb055whAIqLYG_LVZInsLBHVEidYtePA0" />
+                        <div class="overlay absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 uppercase text-xs tracking-widest">Ver
+                                Detalhes</span>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-4 font-serif text-xl text-center">Suíte Master Ouro</h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gold"></div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CTA FINAL -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="contato" class="bg-[#F5F2ED] py-24 md:py-32 px-8 text-center">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="font-serif text-4xl md:text-5xl text-black leading-tight mb-6">
+                Pronto para <span class="serif-italic lowercase">transformar</span> seu espaço?
+            </h2>
+            <p class="text-black/70 text-base md:text-lg mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+                Deixe-nos criar um ambiente que conte sua história com elegância e sofisticação inigualáveis.
+            </p>
+            <a href="https://wa.me/5562999999999" target="_blank"
+                class="inline-block border-2 border-primary text-primary px-16 py-6 font-bold text-xs uppercase tracking-[0.4em] hover:bg-primary hover:text-white transition-all shadow-sm">
+                Agende sua consultoria
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <footer class="bg-[#CABCB1] border-t border-black/5">
+        <!-- Main Footer -->
+        <div class="pt-16 pb-12 px-8 text-black">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Col 1: Logo & Description -->
+                <div>
+                    <img src="projeta_designers.png" alt="Projjeta Logo" class="h-9 mb-6 brightness-0 opacity-100">
+                    <p class="text-[13px] leading-relaxed mb-0 max-w-xs font-semibold tracking-wide opacity-80">
+                        Estúdio de arquitetura dedicado à busca do luxo atemporal através de narrativas inovadoras e
+                        execução magistral de design.
+                    </p>
+                </div>
+
+                <!-- Col 2: Localização -->
+                <div class="reveal">
+                    <h4 class="text-black font-bold mb-6 uppercase text-[11px] tracking-[0.3em] relative inline-block">
+                        Localização
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-px bg-black/30"></span>
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <span class="text-black/60 material-symbols-outlined text-lg">location_on</span>
+                            <p class="text-[13px] font-bold">São Paulo, SP – Brasil</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-black/60 material-symbols-outlined text-lg">location_on</span>
+                            <p class="text-[13px] font-bold">Goiânia, GO – Brasil</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 3: Propósito -->
+                <div class="reveal">
+                    <h4 class="text-black font-bold mb-6 uppercase text-[11px] tracking-[0.3em] relative inline-block">
+                        Propósito
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-px bg-black/30"></span>
+                    </h4>
+                    <ul class="space-y-3 text-[13px] font-bold">
+                        <li><a class="hover:text-black/60 transition-colors flex items-center gap-3" href="#inicio">
+                                <span class="w-1 h-1 bg-black/20"></span> Portfólio Residencial</a>
+                        </li>
+                        <li><a class="hover:text-black/60 transition-colors flex items-center gap-3" href="#servicos">
+                                <span class="w-1 h-1 bg-black/20"></span> Projetos Comerciais</a>
+                        </li>
+                        <li><a class="hover:text-black/60 transition-colors flex items-center gap-3" href="#manifesto">
+                                <span class="w-1 h-1 bg-black/20"></span> O Conceito do Estúdio</a>
+                        </li>
+                        <li><a class="hover:text-black/60 transition-colors flex items-center gap-3" href="#contato">
+                                <span class="w-1 h-1 bg-black/20"></span> Solicitar Orçamento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contato -->
+                <div class="reveal">
+                    <h4 class="text-black font-bold mb-6 uppercase text-[11px] tracking-[0.3em] relative inline-block">
+                        Contato
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-px bg-black/30"></span>
+                    </h4>
+                    <p class="text-[13px] mb-4 font-semibold opacity-70">Disponível para projetos exclusivos em todo o
+                        território nacional.</p>
+                    <a href="mailto:hello@projjeta.design"
+                        class="flex items-center gap-4 text-black font-bold text-base mb-3 hover:opacity-60 transition-all group">
+                        <svg class="w-5 h-5 fill-current text-black/40 group-hover:text-black" viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        hello@projjeta.design
+                    </a>
+                    <a href="tel:+5562999999999"
+                        class="flex items-center gap-4 text-black font-bold text-base hover:opacity-60 transition-all group">
+                        <svg class="w-5 h-5 fill-current text-black/40 group-hover:text-black" viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        +55 (62) 99999-9999
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bg-[#CABCB1] py-5 px-8 border-t border-black/5">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+                <p class="text-black/60 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">
+                    © 2026 PROJJETA DESIGN STUDIO.
+                </p>
+                <div class="flex gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-black/60">
+                    <a href="#" class="hover:text-black transition-all">Política de Privacidade</a>
+                    <a href="#" class="hover:text-black transition-all">Termos de Serviço</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SCRIPTS -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <script>
+        // Scroll Reveal
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                const visible = 120;
+                if (top < window.innerHeight - visible) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
